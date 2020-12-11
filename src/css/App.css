@@ -1,0 +1,38 @@
+
+
+.App{
+  display: grid;
+  grid-template-columns: minmax(150px, 10%) 1fr;
+  height: 100%;
+  grid-template-areas: "nav post-bar"
+                       "nav list";
+  grid-template-rows: 10% 1fr;
+}
+
+:root{
+  --first-colour: #1a1a2e;
+  --second-colour: #16213e;
+  --third-colour: #0f3460;
+  --fourth-colour: #e94560;
+  color: var(--fourth-colour);
+}
+
+.Navigation{
+  grid-area: nav;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--first-colour);
+  height: 100%;
+}
+
+.PostBar{
+  position: relative;
+  margin: auto;
+  grid-area: post-bar;
+
+}
+
+.Articles{
+  grid-area: list;
+}
+

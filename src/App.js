@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import Navigation from './components/Navigation'
+import Articles from './components/Articles'
+import getTopics from './api'
+import { Component } from 'react';
+import PostBar from './components/PostBar'
+import { Router } from '@reach/router'
+import SingleArticle from './components/SingleArticle'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { topics: [], user: 'tickle122' };
+
+  componentDidMount() {
+    getTopics().then(topics => {
+      this.setState({ topics })
+    })
+  }
+
+  handleError(error) {
+    console.log('hello')
+  }
+
+  render() {
+    if (this.state.errorPage === true) return <p>what you doing you muppet</p>
+    else {
+      return (
+        <div className="App">
+          <Navigation />
+          <Router>
+            <Articles path='/' topics={this.state.topics} />
+            <Articles path='/:topic' topics={this.state.topics} />
+            <SingleArticle path='/article/:article_id' username={this.state.user} topics={this.state.topics} />
+          </Router>
+        </div>
+      );
+    }
+  }
 }
 
 export default App;

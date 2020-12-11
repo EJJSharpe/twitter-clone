@@ -1,0 +1,57 @@
+:root{
+    --first-colour: #1a1a2e;
+    --second-colour: #16213e;
+    --third-colour: #98bbe6;
+    --fourth-colour: #e94560;
+    color: var(--first-colour);
+    box-sizing: border-box;
+    }
+
+.sortByHeading{
+   margin: none;
+   color: #98b8df;
+   font-weight: bold;
+   background-color: var(--first-colour);
+   border-radius: 1rem;
+   padding: 0.5rem;
+}
+
+.sortButtonsContainer{
+    background-color: #98b8df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+
+}
+
+.sortButton{
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--fourth-colour);
+    border: solid var(--first-colour);
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+.cardsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #98b8df;
+}
+
+.articleCard{
+    width: 500px;
+    background-color: white;
+    border-style: solid;
+    border-radius: 1rem;
+    border-width: 0.5rem;
+    margin-bottom: 1rem;
+    border-color: var(--fourth-colour);
+    font-weight: bold;
+    color: var(--first-colour);
+}
+

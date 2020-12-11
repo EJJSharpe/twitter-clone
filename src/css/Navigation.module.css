@@ -1,0 +1,54 @@
+:root{
+  
+    --first-colour: #1a1a2e;
+    --second-colour: #16213e;
+    --third-colour: #0f3460;
+    --fourth-colour: #e94560;
+    color: var(--fourth-colour);
+
+}
+
+.siteHeader{
+    align-self: center;
+    color: white;
+    text-decoration: none;
+}
+
+.topicsHeader{
+    color: var(--fourth-colour);
+    align-self: center;
+}
+
+.topicsList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.topicLink{
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+.topicListItem{
+    text-decoration: none;
+    list-style: none;
+    background-color: var(--fourth-colour);
+    color: var(--third-colour);
+    border-radius: 1rem;
+    margin-bottom: 0.2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    color: var(--first-colour);
+    font-weight: bold;
+    
+}
+
+.topicLink:hover{
+    transform: scale(1.1);
+}
+
