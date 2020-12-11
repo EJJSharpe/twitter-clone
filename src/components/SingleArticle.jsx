@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getSingleArticle, getComments, postComment, deleteComment } from '../api'
 import Voter from './Voter'
+import styles from '../css/SingleArticle.module.css'
 
 class SingleArticle extends Component {
     state = {
@@ -16,7 +17,6 @@ class SingleArticle extends Component {
             getComments(this.props.article_id)]
         ).then(([article, comments]) => {
             this.setState({ article, comments, isLoading: false })
-
         })
 
     }
@@ -61,24 +61,24 @@ class SingleArticle extends Component {
             const { title, body, topic, author, created_at } = this.state.article
             return (
                 <>
-                    <div className='single-article'>
+                    <div className={styles.singleArticle}>
                         <h3>{title}</h3>
                         <p>{body}</p>
                         <p>{topic}</p>
                         <p>{author}</p>
                         <p>{new Date(created_at).toDateString()}</p>
                     </div>
-                    <div className='add-comment'>
-                        <form onSubmit={this.handleCommentPost}>
-                            <input id='body' type='text' value={this.state.body} onChange={this.handleChange} placeholder='type your comment here'></input>
-                            <button type='submit'>Post</button>
+                    <div className={styles.addComment}>
+                        <form className={styles.formContainer} onSubmit={this.handleCommentPost}>
+                            <input className={styles.formTextInput} id='body' type='text' value={this.state.body} onChange={this.handleChange} placeholder='type your comment here'></input>
+                            <button className={styles.submitButton} type='submit'>Post</button>
                         </form>
                     </div>
-                    <div className='comments'>
+                    <div className={styles.commentsSection}>
                         {this.state.comments.map(comment => {
                             const { comment_id, author, body, created_at, votes } = comment
                             return (
-                                <div key={comment_id} className='single-comment'>
+                                <div key={comment_id} className={styles.singleComment}>
                                     <p>{body}</p>
                                     <p>{author}</p>
                                     <Voter comments={this.state.comments} votes={votes} comment_id={comment_id} />

@@ -1,23 +1,12 @@
-:root{
-    --first-colour: #1a1a2e;
-    --second-colour: #16213e;
-    --third-colour: #98bbe6;
-    --fourth-colour: #e94560;
-    color: var(--first-colour);
-    box-sizing: border-box;
-    }
 
 .sortByHeading{
    margin: none;
-   color: #98b8df;
+   color: var(--second-colour);
    font-weight: bold;
-   background-color: var(--first-colour);
-   border-radius: 1rem;
-   padding: 0.5rem;
-}
+   border-radius: 1rem;}
 
 .sortButtonsContainer{
-    background-color: #98b8df;
+    background-color: var(--first-colour);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,12 +16,13 @@
 }
 
 .sortButton{
-    padding: 0.2rem;
+    padding: 0.5rem;
     margin-bottom: 0.5rem;
-    background-color: var(--fourth-colour);
-    border: solid var(--first-colour);
-    border-radius: 1rem;
+    background-color: var(--second-colour);
+    border-radius: 50%;
     font-weight: bold;
+    font-size: 15px; 
+    text-align: center;
 }
 
 .cardsContainer{
@@ -40,18 +30,23 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #98b8df;
+    background-color: var(--first-colour);
 }
 
 .articleCard{
     width: 500px;
     background-color: white;
     border-style: solid;
-    border-radius: 1rem;
+    border-radius: 2rem;
     border-width: 0.5rem;
     margin-bottom: 1rem;
     border-color: var(--fourth-colour);
     font-weight: bold;
     color: var(--first-colour);
+    padding: 2rem;
 }
 
+.errorText{
+    color: var(--second-colour);
+    font-weight: bold;
+}

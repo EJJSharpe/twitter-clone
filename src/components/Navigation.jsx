@@ -18,8 +18,12 @@ class Navigation extends Component {
         const { topics } = this.state
         return (
             <>
-                <div className={'Navigation'}>
+                <div className='Navigation'>
+
                     <Link className={styles.siteHeader} to='/'><h1>NEWS</h1></Link>
+                    <div className={styles.loggedIn}>
+                        <p>Welcome tickle122</p>
+                    </div>
                     <ul className={styles.topicsList}>
                         {topics.map(topic => {
                             return (
@@ -28,6 +32,7 @@ class Navigation extends Component {
                                 </li></Link>)
                         })}
                     </ul>
+
 
                 </div>
             </>

@@ -9,27 +9,27 @@
   grid-template-rows: 10% 1fr;
 }
 
+*{
+  padding: 0;
+}
+
 :root{
   --first-colour: #1a1a2e;
-  --second-colour: #16213e;
-  --third-colour: #0f3460;
-  --fourth-colour: #e94560;
+  --second-colour: #e94560;
   color: var(--fourth-colour);
+  background-color: var(--first-colour);
 }
 
 .Navigation{
   grid-area: nav;
   display: flex;
   flex-direction: column;
-  background-color: var(--first-colour);
+  min-height: 100vh;
   height: 100%;
-}
-
-.PostBar{
-  position: relative;
-  margin: auto;
-  grid-area: post-bar;
-
+  width: 100%;
+  background-color: var(--second-colour);
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .Articles{

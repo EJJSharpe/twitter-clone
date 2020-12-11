@@ -1,0 +1,53 @@
+:root{
+        --first-colour: #1a1a2e;
+        --second-colour: #e94560;
+        color: var(--fourth-colour);
+        background-color: var(--first-colour);
+      
+}
+
+.singleArticle {
+    background-color: white;
+    border-radius: 2rem;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+
+}
+
+.addComment{
+    background-color: var(--second-colour)
+}
+
+.formContainer{
+    background-color: var(--first-colour);
+    display: flex;
+    justify-content: center;
+    
+}
+
+.formTextInput{
+    height: 50px;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+
+}
+
+.commentsSection{
+    
+}
+
+.singleComment{
+    background-color: white;
+    border-radius: 2rem;
+    padding: 2rem;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+
+}

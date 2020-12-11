@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import { getArticles } from '../api'
 import { Link } from '@reach/router'
 import styles from '../css/Articles.module.css'
+import ErrorPage from './ErrorPage';
 
 class Articles extends Component {
 
-    state = { articles: [], topic: undefined, sort_by: 'created_at', order: 'desc' }
+    state = { articles: [], topic: undefined, sort_by: 'created_at', order: 'desc', errorPage: false }
 
     componentDidMount() {
         getArticles(this.props.topic).then(articles => {
-            this.setState({ articles })
+            this.setState({ articles, errorPage: false })
+        }).catch(() => {
+            this.setState({ errorPage: true })
         })
     }
 
@@ -17,7 +20,7 @@ class Articles extends Component {
         const { sort_by, order } = this.state;
         if (prevProps.topic !== this.props.topic) {
             getArticles(this.props.topic).then(articles => {
-                this.setState({ articles, topic: this.props.topic })
+                this.setState({ articles, errorPage: false })
             })
         }
 
@@ -57,7 +60,10 @@ class Articles extends Component {
 
 
     render() {
-        const { articles } = this.state
+        const { articles, errorPage } = this.state
+        if (errorPage) {
+            return <ErrorPage />
+        }
         return (
             <div className='Articles'>
                 <div className={styles.sortButtonsContainer}>
